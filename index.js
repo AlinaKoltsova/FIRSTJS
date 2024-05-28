@@ -1,21 +1,15 @@
-const CounterValue = document.querySelector('[data-find="CounterValue"]');
-const AddButton = document.getElementById("AddButton");
-const ResetButton = document.getElementById("ResetButton");
+let counter = 0;
+let inputButton = document.querySelector ('.inputButton');
+let resetButton = document.querySelector ('.resetButton');
+let counterText = document.querySelector ('.counter');//чтобы выбрать текст по классу
 
-console.log (AddButton.dataset);
 
-const COUNTER_INITIAL_VALUE = 0;
-let counter = COUNTER_INITIAL_VALUE;
-CounterValue.innerText = counter;
-
-AddButton.addEventListener('click', function () {
-
-    counter = counter + parseInt(AddButton.dataset.pools);
-    CounterValue.innerText = counter;
+inputButton.addEventListener('click', function () {
+    counter = counter + 1;
+    counterText.innerText = counter;
 });
 
-ResetButton.addEventListener('click', function () {
-
-    counter = COUNTER_INITIAL_VALUE;
-    CounterValue.innerText = counter;
+resetButton.addEventListener('click', function () {
+    counter = 0;
+    counterText.innerText = counter;
 });
